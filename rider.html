@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rider Dashboard | Caffinity</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-role="rider">
+    <header class="app-header"><a class="brand" href="index.html"><span class="brand-icon">☕</span> Caffinity</a><div class="header-user"><span id="header-user-name"></span><button class="button button-small button-outline" id="logout-button">Logout</button></div></header>
+    <div class="app-layout">
+        <aside class="sidebar"><p class="sidebar-label">DELIVERY RIDER</p><button class="side-link active" data-tab="deliveries">🛵 Assigned Deliveries</button><button class="side-link" data-tab="history">🧾 Delivery History</button><button class="side-link" data-tab="profile">👤 My Profile</button><div class="sidebar-note"><b>Delivery flow</b><span>Picked Up → Out for Delivery → Delivered</span></div></aside>
+        <main class="main-content">
+            <div class="page-heading"><div><p class="eyebrow">DELIVERY AREA</p><h1>Rider Dashboard</h1><p>Manage your assigned deliveries and daily totals.</p></div><span class="role-tag">DELIVERY RIDER</span></div>
+            <section class="tab-panel active" data-section="deliveries"><div class="section-heading"><div><h2>My Assigned Deliveries</h2><p>Update each delivery as you complete it.</p></div><button class="button button-light button-small" id="refresh-rider">Refresh</button></div><div id="assigned-deliveries" class="stack-list"></div></section>
+            <section class="tab-panel" data-section="history"><div class="section-heading"><div><h2>Delivery History</h2><p>Your completed delivery records.</p></div></div><div id="rider-summary" class="stats-grid small-stats"></div><div id="rider-history" class="stack-list"></div></section>
+            <section class="tab-panel" data-section="profile"><div class="section-heading"><div><h2>My Profile</h2><p>Manage your account information and password.</p></div></div><div class="two-column">
+                <form id="profile-form" class="panel form-stack"><h3>Profile Information</h3><div class="profile-picture-row"><img id="profile-preview" src="" alt="Profile picture"><label>Profile picture<input type="file" id="profile-picture" accept="image/*"></label></div><label>Full name<input type="text" id="profile-name" required></label><label>Email address<input type="email" id="profile-email" required></label><label>Phone number<input type="tel" id="profile-phone"></label><button class="button" type="submit">Save Profile</button><p id="profile-message" class="form-message"></p></form>
+                <div class="panel"><form id="password-form" class="form-stack"><h3>Change Password</h3><label>Current password<input type="password" id="current-password" required></label><label>New password<input type="password" id="new-password" minlength="4" required></label><label>Confirm new password<input type="password" id="confirm-password" minlength="4" required></label><button class="button button-dark" type="submit">Change Password</button><p id="password-message" class="form-message"></p></form></div>
+            </div></section>
+        </main>
+    </div>
+    <script src="js/data.js"></script><script src="js/common.js"></script><script src="js/rider.js"></script>
+</body>
+</html>
